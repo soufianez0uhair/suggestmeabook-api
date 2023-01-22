@@ -6,6 +6,7 @@ exports.getBook = async (input) => {
     const book = response.data.items[0];
 
     return {
+        id: book.id,
         title: `${book.volumeInfo.title}${book.volumeInfo.subtitle ? `: ${book.volumeInfo.subtitle}` : ''}`,
         authors: book.volumeInfo.authors,
         frontCover: book.volumeInfo.imageLinks?.thumbnail,
